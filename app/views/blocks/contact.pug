@@ -1,0 +1,24 @@
+section.contact 
+    .container 
+        .contact-main 
+            .contact-info 
+                span.contact-info-title contact us 
+                h2.contact-info-heading Don’t Hesitate, Ask Any Query
+                +contactItem("../images/img-contact-icon1.png", "123 Main Street, 310 USA 12345")
+                +contactItem("../images/img-contact-icon2.png", "+01- 190 -2258 - 2658")
+                +contactItem("../images/img-contact-icon3.png", "Examp@creativeagn.com")
+            form.contact-form(action="")
+                .contact-content
+                    input(type="text" placeholder="Full Name" class="contact-input" required minlenght="5") 
+                    input(type="number" placeholder="Phone" class="contact-input" required max="10") 
+                    input(type="email" placeholder="Email" class="contact-email" required minleght="5")
+                textarea.contact-textarea(name="", cols="30", rows="10") 
+                button.contact-btn(type="submit") Send Message
+        .contact-brand 
+            img.contact-brand-image(src="../images/img-contact-brand1.png", alt="")
+            img.contact-brand-image(src="../images/img-contact-brand2.png", alt="")
+            img.contact-brand-image(src="../images/img-contact-brand3.png", alt="")
+            img.contact-brand-image(src="../images/img-contact-brand4.png", alt="")
+
+                    
+            

@@ -1,0 +1,93 @@
+.footer {
+    background-color: $bg-color;
+    padding: 10rem 0;
+    &-list {
+        @include flexBox();
+        margin-left: -4rem;
+    }
+    &-item {
+        width: calc(25% - 4rem);
+        margin-left: 4rem;
+        &-desc {
+            font-size: 1.5rem;
+            font-family: $secondary-font;
+            line-height: calc(27 / 15);
+            margin-top: 4rem;
+            color: #9999;
+        }
+        &-title {
+            font-weight: 600;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            color: white;
+            text-transform: uppercase;
+        }
+        &-link {
+            display: block;
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            color: #9999;
+            transition: all 0.25s linear;
+            cursor: pointer;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        &-link:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    &-images {
+        @include flexBox(space-between, stretch, row, wrap);
+    }
+    &-img {
+        width: calc(33.33% - 6px);
+        margin-bottom: 1rem;
+    }
+    &-info {
+        @include flexBox(flex-start, center);
+        color: #9999;
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+        &-desc {
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+    }
+    @include maxWidth(1023px) {
+        padding: 8rem 0;
+        &-list {
+            flex-wrap: wrap;
+        }
+        &-item {
+            width: calc(50% - 4rem);
+            margin-bottom: 4rem;
+        }
+    }
+    @include maxWidth(767px) {
+        padding: 5rem 0;
+        &-item {
+            width: 100%;
+        }
+    }
+}
+.copyright {
+    padding: 3rem 0;
+    background-color: #10233a;
+    text-align: center;
+    p {
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+        color: $third-color;
+    }
+    a {
+        display: inline-block;
+        color: $primary-color;
+        &:hover {
+            color: white;
+        }
+    }
+}

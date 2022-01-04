@@ -1,0 +1,165 @@
+.banner {
+    background-color: $background-color;
+    padding: 8rem 0;
+    &-main {
+        @include flexBox(space-between, center);
+        position: relative;
+    }
+    &-content {
+        width: 50%;
+        &-title {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-family: $secondary-font;
+            font-weight: 500;
+            color: $primary-color;
+            margin-bottom: 3rem;
+        }
+        &-heading {
+            font-size: 6rem;
+            font-weight: bold;
+            color: $secondary-color;
+            line-height: 1.1;
+            margin-bottom: 5rem;
+        }
+        &-desc {
+            font-size: 1.5rem;
+            font-family: $secondary-font;
+            margin-bottom: 6.5rem;
+            color: $third-color;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        &-btn {
+            display: inline-block;
+            font-weight: 600;
+            color: white;
+            background-color: $primary-color;
+            padding: 3rem 4rem;
+            border-radius: 10rem;
+            text-transform: uppercase;
+            border: 0;
+            transition: all 0.25s linear;
+        }
+        &-btn:hover {
+            color: $primary-color;
+            background-color: $secondary-color;
+        }
+    }
+    @include minWidth(1400px) {
+        &-image {
+            position: relative;
+            &-photo {
+                transform: translateX(15rem);
+            }
+            &-circle {
+                position: absolute;
+                top: -4rem;
+                right: -20rem;
+                z-index: 5;
+            }
+            &-shadow-blue {
+                position: absolute;
+                bottom: 0;
+                left: 20%;
+                z-index: -1;
+            }
+            &-shadow-orange {
+                position: absolute;
+                top: 12%;
+                left: 35%;
+                z-index: 3;
+            }
+        }
+        &-square {
+            position: absolute;
+            top: 15%;
+            left: -15%;
+        }
+    }
+    @include maxWidth(1399px) {
+        padding: 5rem 0;
+        &-content {
+            width: calc(50% - 5rem);
+            &-title {
+                margin-bottom: 2rem;
+            }
+            &-heading {
+                font-size: 4rem;
+                margin-bottom: 3rem;
+            }
+            &-desc {
+                margin-bottom: 4rem;
+            }
+            &-btn {
+                padding: 2rem 3rem;
+            }
+        }
+        &-image {
+            width: calc(50% -5rem);
+        }
+        &-image {
+            position: relative;
+            &-photo {
+                @include size(50rem);
+            }
+            &-circle {
+                position: absolute;
+                @include size(15rem);
+                top: -2rem;
+                right: 0;
+                z-index: 5;
+            }
+            &-shadow-blue {
+                position: absolute;
+                @include size(20rem);
+                bottom: 0;
+                left: -5%;
+                z-index: 2;
+            }
+            &-shadow-orange {
+                position: absolute;
+                @include size(8rem);
+                top: 14%;
+                left: 15%;
+                z-index: 3;
+            }
+        }
+        &-square {
+            display: none;
+        }
+    }
+    @include maxWidth(767px) {
+        &-main {
+            flex-direction: column-reverse;
+        }
+        &-image {
+            width: 100%;
+        }
+        &-content {
+            width: 100%;
+        }
+        &-image {
+            text-align: center;
+            margin-bottom: 3rem;
+            &-photo {
+                display: inline-block;
+                @include size(30rem);
+            }
+            &-circle {
+                @include size(10rem);
+                right: 1rem;
+            }
+            &-shadow-orange {
+                @include size(5rem);
+                top: 13%;
+                left: 20%;
+            }
+            &-shadow-blue {
+                @include size(12rem);
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}

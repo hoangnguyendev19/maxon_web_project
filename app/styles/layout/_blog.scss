@@ -1,0 +1,63 @@
+.blog {
+    padding: 10rem 0;
+    &-list {
+        @include flexBox(space-between);
+    }
+    &-item {
+        width: calc(33.33% - 2rem);
+    }
+    &-info {
+        padding: 3rem;
+        &-job {
+            font-size: 1.2rem;
+            font-family: $secondary-font;
+            color: $third-color;
+            text-transform: uppercase;
+            border-right: 1px solid $third-color;
+            padding-right: 1rem;
+            margin-right: 1rem;
+        }
+        &-time {
+            font-size: 1.2rem;
+            font-family: $secondary-font;
+            color: $third-color;
+            text-transform: uppercase;
+        }
+        &-heading {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: $secondary-color;
+            margin: 2.5rem 0;
+            @include textClamp(2);
+            transition: all 0.25s linear;
+            cursor: pointer;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        &-icon {
+            color: $primary-color;
+            margin-right: 1rem;
+        }
+        &-sub {
+            font-size: 1.2rem;
+            font-family: $secondary-font;
+            color: $third-color;
+            display: inline-block;
+            margin-right: 3rem;
+        }
+    }
+    @include maxWidth(767px) {
+        padding: 5rem 0;
+        &-list {
+            display: block;
+        }
+        &-item {
+            width: 100%;
+        }
+        &-info-heading {
+            font-size: 1.5em;
+            margin: 2rem 0;
+        }
+    }
+}

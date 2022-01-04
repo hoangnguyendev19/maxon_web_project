@@ -1,0 +1,42 @@
+.header {
+    background-color: $background-color;
+    &-top {
+        @include flexBox(space-between, center);
+        padding: 3rem 0;
+    }
+    &-menu {
+        @include flexBox(flex-start, center);
+        &-item:not(:first-child) {
+            margin-left: 5rem;
+        }
+        &-link {
+            display: inline-block;
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $text-color;
+            text-transform: uppercase;
+            transition: all 0.2s linear;
+        }
+        &-item:hover .header-menu-link {
+            color: $primary-color;
+        }
+    }
+    &-icon {
+        font-size: 3rem;
+        color: $text-color;
+        display: none;
+    }
+    @include maxWidth(767px) {
+        &-top {
+            width: 100%;
+            padding: 2rem 0;
+        }
+        &-menu {
+            display: none;
+        }
+        &-icon {
+            display: block;
+        }
+    }
+}

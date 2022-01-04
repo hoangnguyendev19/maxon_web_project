@@ -1,0 +1,59 @@
+.facts {
+    background-color: $bg-color;
+    padding: 8rem 0;
+    &-list {
+        @include flexBox(space-between, center);
+    }
+    &-item {
+        width: calc(25% - 9rem);
+        &-image {
+            @include flexBox(flex-start, center);
+            margin-bottom: 2rem;
+        }
+        &-info {
+            @include flexBox(flex-start, center);
+            color: white;
+        }
+        &-number {
+            font-family: $secondary-font;
+            font-size: 6rem;
+            font-weight: bold;
+            margin-right: 2rem;
+        }
+        &-desc {
+            font-size: 2.2rem;
+            line-height: calc(30 / 22);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+    @include maxWidth(1399px) {
+        &-item {
+            width: calc(25% - 3rem);
+        }
+    }
+    @include maxWidth(1023px) {
+        padding: 5rem 0;
+        &-list {
+            flex-wrap: wrap;
+        }
+        &-item {
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+    }
+    @include maxWidth(767px) {
+        &-item {
+            width: 100%;
+            &-number {
+                font-size: 2.2rem;
+            }
+            &-image {
+                @include flexBox(center, center);
+            }
+            &-info {
+                @include flexBox(center, center);
+            }
+        }
+    }
+}

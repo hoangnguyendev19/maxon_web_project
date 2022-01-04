@@ -1,0 +1,70 @@
+.team {
+    padding: 10rem 0;
+    &-list {
+        @include flexBox(space-between);
+
+    }
+    &-item {
+        width: calc(33.33% - 2rem);
+        padding: 1.5rem;
+        text-align: center;
+        border: 5px solid transparent;
+        transform: all 0.25s linear;
+        &-image {
+            margin-bottom: 3rem;
+        }
+        &-name {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: $secondary-color;
+            @include textClamp();
+            transform: all 0.25s linear;
+            cursor: pointer;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        &-job {
+            font-family: $secondary-font;
+            margin-bottom: 3.5rem;
+            color: $third-color;
+            display: inline-block;
+        }
+        &-link {
+            display: inline-block;
+            color: #9999;
+            font-family: $secondary-font;
+            transform: all 0.25s linear;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        &-link:not(:last-child) {
+            padding-right: 2rem;
+            margin-right: 2rem;
+            position: relative;
+            &::after {
+                content: "";
+                @include size(5px);
+                @include absoluteCenter(top);
+                right: 0;
+                border-radius: 50%;
+                background-color: #9999;
+            }
+        }
+        &:hover {
+            border-color: $background-color;
+        }
+    }
+    @include maxWidth(767px) {
+        padding: 5rem 0;
+        &-list {
+            flex-wrap: wrap;
+        }
+        &-item {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}

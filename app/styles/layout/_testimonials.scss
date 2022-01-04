@@ -1,0 +1,139 @@
+.testimonials {
+    padding: 10rem 0;
+    &-container {
+        margin-top: 5rem;
+    }
+    &-image {
+        @include size(60rem, 40rem);
+        
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%);
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        &::before {
+            content: "";
+            @include size(5rem);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: shadow 2s linear infinite;
+            z-index: 5;
+        }
+        @keyframes shadow {
+            from {
+                background-color: $primary-color;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1.5);
+                background-color: rgba(255, 114, 20, 0.5);
+            }
+        }
+    }
+    &-icon {
+        @include absoluteCenter(both);
+        color: white;
+        z-index: 9;
+    }
+    &-caption {
+        @include absoluteCenter(left);
+        top: 60%;
+        color: white;
+        font-family: $secondary-font;
+        font-size: 1.5rem;
+        z-index: 9;
+    }
+    &-img {
+        @include size(100%);
+        object-fit: cover;
+    }
+    &-main {
+        @include flexBox();
+    }
+    &-content {
+        @include size(70rem, 100%);
+        margin-left: auto;
+        &-avatar {
+            display: inline-block;
+        }
+        &-avatar {
+            @include size(16rem);
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 3rem;
+        }
+        &-desc {
+            font-size: 2rem;
+            font-family: $secondary-font;
+            line-height: 1.4;
+            color: $third-color;
+            margin-bottom: 3rem;
+        }
+        &-info {
+            @include flexBox();
+        }
+        &-logo {
+            margin-right: 3rem;
+        }
+        &-job {
+            display: inline-block;
+            font-family: $secondary-font;
+            color: $third-color;
+            margin-top: 1.5rem;
+        }
+    }
+    @include minWidth(768px) {
+        &-container {
+            position: relative;
+        }
+        &-image {
+            @include absoluteCenter(top);   
+            left: 0;
+        }
+    }
+    @include maxWidth(1399px) {
+        &-image {
+            @include size(50rem, 40rem);
+        }
+        &-content {
+            width: 45rem;
+        }
+    }
+    @include maxWidth(1023px) {
+        &-image {
+            @include size(35rem, 30rem);
+        }
+        &-content {
+            width: 35rem;
+            &-avatar {
+                @include size(12rem);
+                margin-bottom: 2rem;
+            }
+            &-desc {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        padding: 5rem 0;
+        &-image {
+            position: relative;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+        &-content {
+            width: 100%;
+        }
+        &-main {
+            flex-wrap: wrap;
+        }
+
+    }
+}

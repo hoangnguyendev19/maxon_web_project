@@ -1,0 +1,115 @@
+.contact {
+    padding: 10rem 0;
+    &-main {
+        @include flexBox(space-between);
+    }
+    &-info {
+        width: calc(30% - 5rem);
+        &-title {
+            font-family: $secondary-font;
+            font-weight: 500;
+            color: $primary-color;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        &-heading {
+            font-weight: bold;
+            font-size: 3rem;
+            color: $secondary-color;
+            margin-bottom: 6rem;
+        }
+        &-item {
+            @include flexBox(flex-start, center);
+            margin-bottom: 4rem;
+        }
+        &-desc {
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            color: $third-color;
+            margin-left: 2rem;
+        }
+    }
+    &-form {
+        width: calc(70% - 5rem);
+        text-align: center;
+    }
+    &-content {
+        @include flexBox(space-between, stretch, row, wrap);
+        margin-bottom: 2rem;
+    }
+    &-input {
+        width: calc(50% - 1.5rem);
+        color: black;
+        padding: 2.5rem 2rem;
+        margin-bottom: 2rem;
+        &::-webkit-inner-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+    }
+    &-email {
+        width: 100%;
+        padding: 2.5rem 2rem;
+        color: black;
+    }
+    &-textarea {
+        @include size(100%, 17rem);
+        resize: none;
+        margin-bottom: 4.5rem;
+        color: black;
+    }
+    &-btn {
+        font-weight: 600;
+        padding: 2.5rem 3.5rem;
+        color: white;
+        background-color: $primary-color;
+        border-radius: 10rem;
+        text-transform: uppercase;
+        transition: all 0.25s linear;
+        &:hover {
+            background-color: $secondary-color;
+            color: $primary-color;
+        }
+    }
+    &-brand {
+       @include flexBox(space-between);
+       margin-top: 15rem;
+       &-image {
+           width: calc(25% - 8rem);
+           height: 100%;
+       }
+    }
+    @include maxWidth(1023px) {
+        &-main {
+            display: block;
+            text-align: center;
+        }
+        &-info {
+            width: 100%;
+        }
+        &-form {
+            width: 100%;
+        }
+        &-brand-image {
+            width: calc(25% - 5rem);
+        }
+    }
+    @include maxWidth(767px) {
+        padding: 5rem 0;
+        &-info-heading {
+            margin-bottom: 4rem;
+        }
+        &-input {
+            width: 100%;
+        }
+        &-brand {
+            margin-top: 8rem;
+            @include touchSlider();
+            &-image {
+                width: 100%;
+                margin-right: 3rem;
+            }
+        }
+    }
+}

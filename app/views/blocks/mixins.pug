@@ -1,0 +1,66 @@
+mixin headerMenuItem(href, title) 
+	li.header-menu-item 
+		a.header-menu-link(href= href)= title
+
+mixin blockBox(title, heading)
+	.feature-top 
+		span.feature-title= title
+		h2.feature-heading= heading
+
+mixin featureItem(src, caption, desc, nameClass)
+	.feature-item
+		.feature-item-icon(class= nameClass)
+			img.feature-item-image(src= src, alt="")
+		h3.feature-item-caption= caption
+		p.feature-item-desc= desc
+
+mixin workItem(title, heading, src, reverseContent, reverseImage, reverseMain)
+	.work-container
+		.container
+			.work-main(class= reverseMain) 
+				.work-content(class= reverseContent) 
+					span.work-content-title= title
+					h3.work-content-heading= heading
+					p.work-content-desc Seasons let creeping seasons was green a tree called bring created Shall made whales very green may above dominion seed. Day wo  out. Doesn creeping can called she very. Beast creeping. air secod without, good shall two forth a stars every have won't seed be forth Tree fruitful may May light that thating
+					a.work-content-link(href="#") Learn More
+						i.work-content-icon.fas.fa-long-arrow-alt-right
+				.work-image(class= reverseImage) 
+					img.work-img(src= src, alt="")
+
+mixin factsItem(src, number, desc)
+	.facts-item 
+		.facts-item-image 
+			img.facts-item-logo(src= src, alt="") 
+		.facts-item-info 
+			h2.facts-item-number= number
+			span.facts-item-desc= desc
+
+mixin teamItem(src, name) 
+	.team-item 
+		img.team-item-image(src= src, alt="")
+		h3.team-item-name= name
+		span.team-item-job Software developer
+		.team-item-social 
+			a.team-item-link(href="#") facebook 
+			a.team-item-link(href="#") twitter 
+			a.team-item-link(href="#") skype 
+
+mixin blogItem(src, time)
+	.blog-item 
+		img.blog-image(src= src, alt="")
+		.blog-info 
+			span.blog-info-job design 
+			span.blog-info-time= time
+			h3.blog-info-heading Make dry it is saying earth lights great brought
+			.blog-info-view 
+				i.blog-info-icon.far.fa-comment-alt
+				span.blog-info-sub 4 comments
+				i.blog-info-icon.far.fa-heart 
+				span.blog-info-sub 15 like 
+			
+mixin contactItem(src, desc)
+	.contact-info-item
+		img.contact-info-icon(src= src, alt="")
+		span.contact-info-desc= desc
+			
+				
